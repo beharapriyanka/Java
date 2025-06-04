@@ -50,9 +50,14 @@ public class methodReferenceRunner {
         System.out.println(max);
 
         Integer max1 = List.of(23,45,67,34).stream().filter(methodReferenceRunner::evenNumbersFilter)
-                .max((n1,n2) -> Integer.compare(n1,n2))
+                .max(Integer::compare)
                 .orElse(0);
 
         System.out.println(max1);
+
+        /* Method references can be used with both static methods as well as
+        instance methods. And also method references can be used when the number of
+        parameters are greater than one.
+         */
     }
 }
